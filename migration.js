@@ -5,22 +5,24 @@ db.serialize(function() {
   db.run('CREATE TABLE IF NOT EXISTS `User` ( ' +
            '`id` INTEGER NOT NULL, ' +
            '`username` TEXT NOT NULL, ' +
-           '`f_irstname` TEXT NOT NULL, ' +
-           '`s_urname` TEXT NOT NULL, ' +
-           '`e_mail` TEXT NOT NULL, ' +
+           '`password` TEXT NOT NULL, ' +
+           '`firstname` TEXT NOT NULL, ' +
+           '`surname` TEXT NOT NULL, ' +
+           '`email` TEXT NOT NULL, ' +
            '`is_current_user` INTEGER NOT NULL DEFAULT 1, ' +
            'PRIMARY KEY(`id`) )');
 
-  /*db.run('CREATE TABLE IF NOT EXISTS `Content` ( ' +
+  db.run('CREATE TABLE IF NOT EXISTS `Content` ( ' +
            '`id` INTEGER NOT NULL, ' +
-           '`hours` INTEGER NOT NULL, ' +
-           '`rate` INTEGER NOT NULL, ' +
-           '`date` INTEGER NOT NULL, ' +
-           '`employee_id` INTEGER NOT NULL, ' +
+           '`title` TEXT NOT NULL, ' +
+           '`category` TEXT NOT NULL, ' +
+           '`subcategory` TEXT NOT NULL, ' +
+           '`placeholder` TEXT NOT NULL, ' +
+           '`user_id` INTEGER NOT NULL, ' +
            'PRIMARY KEY(`id`), ' +
-           'FOREIGN KEY(`employee_id`) REFERENCES `Employee`(`id`) )');
+           'FOREIGN KEY(`user_id`) REFERENCES `User`(`id`) )');
 
-  db.run('CREATE TABLE IF NOT EXISTS `Menu` ( ' +
+  /*db.run('CREATE TABLE IF NOT EXISTS `Menu` ( ' +
            '`id` INTEGER NOT NULL, ' +
            '`title` TEXT NOT NULL, ' +
            'PRIMARY KEY(`id`) )');

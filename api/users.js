@@ -35,21 +35,25 @@ usersRouter.get('/:userId', (req, res, next) => {
 });
 
 usersRouter.post('/', (req, res, next) => {
-  const name = req.body.user.name,
-        position = req.body.user.position,
-        wage = req.body.user.wage,
-        isCurrentuser = req.body.user.isCurrentuser === 0 ? 0 : 1;
-  if (!name || !position || !wage) {
+  const username = req.body.user.username,
+        password = req.body.user.password,
+        firstname = req.body.user.firstname,
+        surname = req.body.user.surname,
+        email = req.body.user.email,
+        is_current_user = req.body.user.is_current_user === 0 ? 0 : 1;
+  if (!username || !password || !firstname || !surname ||!email) {
     return res.sendStatus(400);
   }
 
-  const sql = 'INSERT INTO user (name, position, wage, is_current_user)' +
-      'VALUES ($name, $position, $wage, $isCurrentuser)';
+  const sql = 'INSERT INTO user (username, password, firstname, surname, email, is_current_user)' +
+      'VALUES ($username, $password, $firstname, $surname, $email, $is_current_user)';
   const values = {
-    $name: name,
-    $position: position,
-    $wage: wage,
-    $isCurrentuser: isCurrentuser
+    $username: username,
+    $password: password,
+    $firstname: firstname,
+    $surname: surname,
+    $email: email,
+    $is_current_user: is_current_user
   };
 
   db.run(sql, values, function(error) {
@@ -65,22 +69,26 @@ usersRouter.post('/', (req, res, next) => {
 });
 
 usersRouter.put('/:userId', (req, res, next) => {
-  const name = req.body.user.name,
-        position = req.body.user.position,
-        wage = req.body.user.wage,
-        isCurrentuser = req.body.user.isCurrentuser === 0 ? 0 : 1;
-  if (!name || !position || !wage) {
+  const username = req.body.user.username,
+        password = req.body.user.password,
+        firstname = req.body.user.firstname,
+        surname = req.body.user.surname,
+        email = req.body.user.email,
+        is_current_user = req.body.user.is_current_user === 0 ? 0 : 1;
+  if (!username || !password || !firstname || !surname ||!email) {
     return res.sendStatus(400);
   }
 
-  const sql = 'UPDATE user SET name = $name, position = $position, ' +
-      'wage = $wage, is_current_user = $isCurrentuser ' +
+  const sql = 'UPDATE user SET username = $username, password = $password, firstname = $firstname, ' +
+      'surname = $surname, email = $email, is_current_user = $is_current_user ' +
       'WHERE user.id = $userId';
   const values = {
-    $name: name,
-    $position: position,
-    $wage: wage,
-    $isCurrentuser: isCurrentuser,
+    $username: username,
+    $password: password,
+    $firstname: firstname,
+    $surname: surname,
+    $email: email,
+    $is_current_user: is_current_user,
     $userId: req.params.userId
   };
 

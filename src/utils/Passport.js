@@ -1,6 +1,7 @@
 const apiRouter = require('./api.js');
 const passport = require('passport'),
   LocalStrategy = require('passport-local').Strategy;
+const User = require('./');
 
 passport.use(new LocalStrategy(
   function(username, password, done) {

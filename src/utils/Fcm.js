@@ -1,6 +1,6 @@
 import camelcaseKeys from './camelcase-keys/index';
 import 'whatwg-fetch';
-import Passport from './Passport';
+//import Passport from './Passport';
 
 const Fcm = {};
 const baseUrl = 'http://localhost:3000/api';

@@ -6,7 +6,7 @@ class Image extends React.Component {
   render() {
     return (
       <div className="Image">
-        <p>{pic}</p>
+        <p>{pic}}</p>
       </div>
     );
   }

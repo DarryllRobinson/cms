@@ -13,34 +13,34 @@ class App extends Component {
         {
           id: '0',
           username: 'username_0',
-          f_irstname: 'f_irstname_0',
-          s_urname: 's_urname_0',
-          e_mail: 'e_mail_0',
+          firstname: 'firstname_0',
+          surname: 'surname_0',
+          email: 'email_0',
           is_current_user: 0
         },
         {
           id: '1',
           username: 'username_1',
-          f_irstname: 'f_irstname_1',
-          s_urname: 's_urname_1',
-          e_mail: 'e_mail_1',
+          firstname: 'firstname_1',
+          surname: 'surname_1',
+          email: 'email_1',
           is_current_user: 0
         }
       ],
       contents: [
         {
           id: '0',
-          c_ategory: 'd_cat_0',
-          s_ubcategory: 'd_sub_0',
-          p_laceholder: 'd_place_0',
-          u_ser_id: 0
+          category: 'd_cat_0',
+          subcategory: 'd_sub_0',
+          placeholder: 'd_place_0',
+          user_id: 0
         },
         {
           id: '1',
-          c_ategory: 'd_cat_1',
-          s_ubcategory: 'd_sub_1',
-          p_laceholder: 'd_place_1',
-          u_ser_id: 0
+          category: 'd_cat_1',
+          subcategory: 'd_sub_1',
+          placeholder: 'd_place_1',
+          user_id: 0
         }
       ]
     }
@@ -50,12 +50,14 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('Mounting');
     this.getUsers();
     this.getContents();
   }
 
   async getUsers(){
     try{
+      console.log('About to try');
       let response = await fetch('http://localhost:3000/api/users');
       if (response.ok) {
         let jsonResponse = await response.json();
@@ -63,9 +65,9 @@ class App extends Component {
         let a = this.state.users.slice(); //creates the clone of the state
         // Need to update to iterate instead of stupid code the thing
         a[0].username = jsonResponse.users[0].username;
-        a[0].f_irstname = jsonResponse.users[0].f_irstname;
-        a[0].s_urname = jsonResponse.users[0].s_urname;
-        a[0].e_mail = jsonResponse.users[0].e_mail;
+        a[0].firstname = jsonResponse.users[0].firstname;
+        a[0].surname = jsonResponse.users[0].surname;
+        a[0].email = jsonResponse.users[0].email;
         this.setState((prevState, props) => {
           return {
             // Need to update to .push() into the array
@@ -88,15 +90,15 @@ class App extends Component {
 
         let a = this.state.contents.slice(); //creates the clone of the state
         // Need to update to iterate instead of stupid code the thing
-        a[0].c_ategory = jsonResponse.contents[0].c_ategory;
-        a[0].s_ubcategory = jsonResponse.contents[0].s_ubcategory;
-        a[0].p_laceholder = jsonResponse.contents[0].p_laceholder;
-        a[0].u_ser_id = jsonResponse.contents[0].u_ser_id;
+        a[0].category = jsonResponse.contents[0].category;
+        a[0].subcategory = jsonResponse.contents[0].subcategory;
+        a[0].placeholder = jsonResponse.contents[0].placeholder;
+        a[0].user_id = jsonResponse.contents[0].user_id;
 
-        a[1].c_ategory = jsonResponse.contents[1].c_ategory;
-        a[1].s_ubcategory = jsonResponse.contents[1].s_ubcategory;
-        a[1].p_laceholder = jsonResponse.contents[1].p_laceholder;
-        a[1].u_ser_id = jsonResponse.contents[1].u_ser_id;
+        a[1].category = jsonResponse.contents[1].category;
+        a[1].subcategory = jsonResponse.contents[1].subcategory;
+        a[1].placeholder = jsonResponse.contents[1].placeholder;
+        a[1].user_id = jsonResponse.contents[1].user_id;
 
         this.setState((prevState, props) => {
           return {
@@ -118,9 +120,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to the Flying Crow Media Content Management System</h1>
         </header>
-        <User user={this.state.users[0].username} fname={this.state.users[0].f_irstname}/>
-        <Content category={this.state.contents[0].c_ategory} ptext={this.state.contents[0].p_laceholder}/>
-        <Content category={this.state.contents[1].c_ategory} ptext={this.state.contents[1].p_laceholder}/>
+        <User user={this.state.users[0].username} fname={this.state.users[0].firstname}/>
+        <Content category={this.state.contents[0].category} ptext={this.state.contents[0].placeholder}/>
+        <Content category={this.state.contents[1].category} ptext={this.state.contents[1].placeholder}/>
       </div>
     );
   }

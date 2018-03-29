@@ -5,7 +5,6 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
 
 contentsRouter.param('contentId', (req, res, next, contentId) => {
-  console.log('param');
   const sql = 'SELECT * FROM content WHERE content.id = $contentId';
   const values = {$contentId: contentId};
   db.get(sql, values, (error, content) => {

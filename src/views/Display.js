@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Fade } from 'react-slideshow-image';
 import Fcm from '../utils/Fcm';
+import Slideshow from '../utils/Slideshow';
 
-class Landing extends Component {
+class Display extends Component {
   constructor(props) {
     super(props);
 
@@ -52,17 +53,16 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="Landing">
-        <h2>Welcome to the Flying Crow Media Content Management System</h2>
-        <h2>CONTENTS</h2>
+      <div className="Display">
         <div className="content item-list">
-          {this.renderContents()}
+          {/*<img src='../img/coca-cola.jpg' alt="logo" />*/}
+          <Slideshow />
+          <Fade images="../img/coca-cola.jpg"/>
         </div>
-        <Link to="/contents/new" className="button">ADD</Link>
       </div>
     );
   }
 
 }
 
-export default Landing;
+export default Display;

@@ -36,7 +36,9 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='Content'", (
       db.run("INSERT INTO Content (title, category, subcategory, placeholder, user_id) " +
         "VALUES ('Title 1', 'Medical', 'Pharmaceutical', 'The content will go here', '2')");
         db.run("INSERT INTO Content (title, category, subcategory, placeholder, user_id) " +
-          "VALUES ('Title 2', 'Telecomms', 'Tune download', 'Party time!', '1')"), function(error) {
+          "VALUES ('Title 2', 'Retail', 'Clothing', 'Nice shoes, bru', '1')");
+          db.run("INSERT INTO Content (title, category, subcategory, placeholder, user_id) " +
+          "VALUES ('Title 3', 'Telecomms', 'Tune download', 'Party time!', '1')"), function(error) {
             if (error) {
               throw new Error(error);
             }

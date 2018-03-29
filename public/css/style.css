@@ -58,7 +58,7 @@ input {
   text-align: center;
 }
 
-.Landing {
+.Display {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +68,7 @@ input {
   background-color: #f3f3f3;
 }
 
-.Landing h2 {
+.Display h2 {
   margin-bottom: 1rem;
   font-size: 1.125rem;
   font-weight: 600;
@@ -77,14 +77,14 @@ input {
   color: #7e5a61;
 }
 
-.Landing .item-list {
+.Display .item-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 2rem;
 }
 
-.Landing .item {
+.Display .item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,27 +102,27 @@ input {
   transition: .25s;
 }
 
-.Landing .item:hover {
+.Display .item:hover {
   opacity: 0.8;
 }
 
-.Landing .menu .item {
+.Display .menu .item {
   background-color: #a78881;
 }
 
-.Landing .content .item {
+.Display .content .item {
   background-color: #c6a17e;
 }
 
-.Landing .item h3 {
+.Display .item h3 {
   display: inline-block;
 }
 
-.Landing .menu .item h3 {
+.Display .menu .item h3 {
   margin-bottom: 1rem;
 }
 
-.Landing .button {
+.Display .button {
   padding: .5rem 1.5rem;
   margin-bottom: 2rem;
   font-size: 1rem;
@@ -131,7 +131,7 @@ input {
   transition: .25s;
 }
 
-.Landing .button:hover {
+.Display .button:hover {
   background-color: #ad9696;
 }
 

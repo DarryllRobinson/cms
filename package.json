@@ -28,13 +28,16 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "~1.0.4",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "react-slideshow-image": "^0.2.2",
+    "reactstrap": "^5.0.0",
+    "redux": "^3.7.2",
     "sqlite3": "^3.1.9",
+    "video-react": "^0.10.4",
     "warning": "^3.0.0"
   },
   "peerDependencies": {

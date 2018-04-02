@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    /*this.state = {
+    this.state = {
       images: [
         {
           id: '0',
@@ -20,42 +20,19 @@ class App extends Component {
       ]
     }
 
-    this.getUsers = this.getUsers.bind(this);*/
+    /*this.getUsers = this.getUsers.bind(this);*/
 
   }
-
-
-
-
-
-    /*  const images = [
-        './Components/Images/coca-cola.jpg',
-        './Components/Images/nandos.png',
-        './Components/Images/nike.jpg',
-        './Components/Images/tesla.jpg'
-      ];
-
-      const Slideshow = () => {
-        return (
-            <Fade
-              images={images}
-              duration={5000}
-              transitionDuration={1000}
-            />
-          )
-        }*/
-
-
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <header>
+          {/*}<header>
             <Link to="/" className="logo">
               <img src='../img/fcm_logo.jpg' alt="logo" />
             </Link>
-          </header>
+          </header>*/}
           <Route exact path="/" component={Display} />
           {/*this.Slideshow}
           {<Route path="/menus/:id" component={Menu} />

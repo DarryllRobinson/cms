@@ -66,10 +66,11 @@ class Display extends Component {
         {/*<link rel="stylesheet" href="https://video-react.github.io/assets/video-react.css" />
           <img src={this.props.uri} alt="coca-cola"/>
           {console.log('this.props.uri: ', this.props.uri)}
-          <img src='../img/tesla.jpg' alt="logo" />
-          <video className="video-container video-container-overlay" autoplay="" loop="" muted="" data-reactid=".0.1.0.0">
-            <source type="video/mp4" data-reactid=".0.1.0.0.0" src="../img/FCM-BB-Low.mp4" />
-          </video>*/}
+          <img src='../img/tesla.jpg' alt="logo" />*/}
+          <video className="video-container" autoPlay loop >
+          {console.log('this.props.source: ', this.props)}
+            <source type="video/mp4" src={this.props.source} />
+          </video>
           <Player>
             {/*<source  src="../img/FCM-BB-Low.mp4" autoPlay />*/}
           </Player>
